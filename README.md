@@ -24,6 +24,15 @@ The main metric is **MAE** (mean absolute error): the average size of the model'
 4. Tune, try boosting libraries and stacking
 5. Evaluate once on the test set, explain the results, build a demo
 
+## Results
+
+All scores are 5-fold cross-validation on the training set (1,168 houses). The test set has not been used yet.
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| Linear Regression (baseline) | $20,457 | $37,871 | 0.756 |
+
 ## Status
 
 Work in progress.
+

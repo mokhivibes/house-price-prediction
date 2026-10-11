@@ -26,15 +26,17 @@ The main metric is **MAE** (mean absolute error): the average size of the model'
 
 ## Results
 
-All scores are 5-fold cross-validation on the training set. The test set has not been used yet.
+All scores are 5-fold cross-validation on the cleaned training set (1,166 houses). The test set has not been used yet. No model is tuned so far.
 
-| Model | Training data | MAE | RMSE | R² |
-|---|---|---|---|---|
-| Linear Regression (first baseline) | all 1,168 houses, all columns | $20,457 | $37,871 | 0.756 |
-| Linear Regression (cleaned baseline) | 1,166 houses, `PoolArea` and `GarageYrBlt` dropped | $17,207 | $25,396 | 0.890 |
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| Gradient Boosting | $15,863 | $24,563 | 0.898 |
+| Linear Regression (baseline) | $17,207 | $25,396 | 0.890 |
+| Random Forest | $17,507 | $27,526 | 0.872 |
+| KNN | $21,561 | $35,085 | 0.793 |
+| Decision Tree | $26,597 | $40,250 | 0.722 |
 
-The cleaning decisions behind the second row, and the experiments that justify them, are in `03_eda.ipynb` and `05_cleaning_evidence.ipynb`.
-## Status
+Gradient Boosting leads, but only by about 8% of MAE over the baseline, so the top three are close. The cleaning decisions behind these numbers, and the experiments that justify them, are in `03_eda.ipynb` and `05_cleaning_evidence.ipynb`. The comparison is in `06_model_comparison.ipynb`.
 
 Work in progress.
 
